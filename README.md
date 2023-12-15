@@ -152,7 +152,7 @@ TextFormField(
 ```dart
 TextFormField(
       decoration: const InputDecoration(
-        hintText: 'custom error message',
+        hintText: 'email validator',
       ),
       validator: EasyValidator.email().validate,
     )
@@ -163,7 +163,7 @@ TextFormField(
 ```dart
 TextFormField(
       decoration: const InputDecoration(
-        hintText: 'custom error message',
+        hintText: 'compose with regex validator',
       ),
       validator: EasyValidator.compose([
         EasyValidator.required(),
