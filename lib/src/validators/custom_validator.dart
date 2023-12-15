@@ -28,4 +28,14 @@ final class CustomValidator extends EasyValidator {
     }
     return validator(value);
   }
+
+  @override
+  int get hashCode => Object.hash(validator.hashCode, errorMessage.hashCode);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CustomValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

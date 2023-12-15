@@ -29,4 +29,14 @@ final class RequiredValidator extends EasyValidator with EasyValidatorMixin {
     }
     return null;
   }
+
+  @override
+  int get hashCode => errorMessage.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RequiredValidator &&
+          runtimeType == other.runtimeType &&
+          errorMessage == other.errorMessage;
 }

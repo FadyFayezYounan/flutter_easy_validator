@@ -33,4 +33,14 @@ final class EqualLengthValidator extends EasyValidator with EasyValidatorMixin {
     }
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(length.hashCode, errorMessage.hashCode);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EqualLengthValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

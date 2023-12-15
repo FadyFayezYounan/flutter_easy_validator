@@ -53,4 +53,18 @@ final class NotStartWithValidator extends EasyValidator
 
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(
+        notStartWith.hashCode,
+        caseSensitive.hashCode,
+        useTrim.hashCode,
+      );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is NotStartWithValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

@@ -55,4 +55,19 @@ final class StartWithValidator extends EasyValidator with EasyValidatorMixin {
     }
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(
+        startWith.hashCode,
+        caseSensitive.hashCode,
+        useTrim.hashCode,
+        errorMessage.hashCode,
+      );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is StartWithValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

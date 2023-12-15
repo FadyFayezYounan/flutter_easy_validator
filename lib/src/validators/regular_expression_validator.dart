@@ -32,4 +32,14 @@ final class RegularExpressionValidator extends EasyValidator
     }
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(regExp.hashCode, errorMessage.hashCode);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RegularExpressionValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

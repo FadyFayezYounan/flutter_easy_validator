@@ -54,4 +54,19 @@ final class EqualToValidator extends EasyValidator with EasyValidatorMixin {
       equalTo,
     );
   }
+
+  @override
+  int get hashCode => Object.hash(
+        equalTo.hashCode,
+        caseSensitive.hashCode,
+        useTrim.hashCode,
+        errorMessage.hashCode,
+      );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EqualToValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

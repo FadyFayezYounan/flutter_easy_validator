@@ -28,4 +28,14 @@ final class ContainsNumbersValidator extends EasyValidator
     }
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(regExp.hashCode, errorMessage.hashCode);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ContainsNumbersValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

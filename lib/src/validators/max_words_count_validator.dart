@@ -35,4 +35,14 @@ final class MaxWordCountValidator extends EasyValidator
     }
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(maxWordCount.hashCode, errorMessage.hashCode);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is MaxWordCountValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

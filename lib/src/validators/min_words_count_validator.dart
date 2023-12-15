@@ -35,4 +35,14 @@ final class MinWordCountValidator extends EasyValidator
     }
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(minWordCount.hashCode, errorMessage.hashCode);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is MinWordCountValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

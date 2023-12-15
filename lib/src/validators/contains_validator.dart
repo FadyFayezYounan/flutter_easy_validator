@@ -49,4 +49,18 @@ final class ContainsValidator extends EasyValidator with EasyValidatorMixin {
     }
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(
+        contains.hashCode,
+        caseSensitive.hashCode,
+        errorMessage.hashCode,
+      );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ContainsValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

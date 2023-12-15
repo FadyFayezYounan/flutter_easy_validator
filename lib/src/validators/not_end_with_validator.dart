@@ -53,4 +53,19 @@ final class NotEndWithValidator extends EasyValidator with EasyValidatorMixin {
 
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(
+        notEndWith.hashCode,
+        caseSensitive.hashCode,
+        useTrim.hashCode,
+        errorMessage.hashCode,
+      );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is NotEndWithValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

@@ -188,8 +188,8 @@ void main() {
   ..email = 'email error message'
   ..regExp = 'regExp error message'
   ..equalLength = 'equal length error message'
-  ..startWith = 'start with error message'.
-  .endWith = 'end with error message'
+  ..startWith = 'start with error message'
+  ..endWith = 'end with error message'
   ..contains = 'contains error message'
   ..containsNumbers = 'contains numbers error message'
   ..notEqualTo = 'not equal to error message'

@@ -32,4 +32,14 @@ final class MinLengthValidator extends EasyValidator with EasyValidatorMixin {
     }
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(minLength.hashCode, errorMessage.hashCode);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is MinLengthValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

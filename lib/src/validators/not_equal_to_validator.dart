@@ -53,4 +53,18 @@ final class NotEqualToValidator extends EasyValidator with EasyValidatorMixin {
     }
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(
+        notEqualTo.hashCode,
+        caseSensitive.hashCode,
+        errorMessage.hashCode,
+      );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is NotEqualToValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

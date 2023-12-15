@@ -48,4 +48,18 @@ class NotContainsValidator extends EasyValidator with EasyValidatorMixin {
     }
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(
+        notContains.hashCode,
+        caseSensitive.hashCode,
+        errorMessage.hashCode,
+      );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is NotContainsValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }

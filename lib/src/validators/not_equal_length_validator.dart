@@ -14,7 +14,7 @@ final class NotEqualLengthValidator extends EasyValidator
   /// String? result = validator.validate("Hello");
   /// print(result); // Value must not have a length of 5
   /// ```
-  const NotEqualLengthValidator(this.length, [super.customMessage]);
+  const NotEqualLengthValidator(this.length, [super.errorMessage]);
 
   /// [length] is the length of the string to compare with
   final int length;
@@ -30,4 +30,14 @@ final class NotEqualLengthValidator extends EasyValidator
     }
     return null;
   }
+
+  @override
+  int get hashCode => Object.hash(length.hashCode, errorMessage.hashCode);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is NotEqualLengthValidator &&
+          runtimeType == other.runtimeType &&
+          hashCode == other.hashCode;
 }
