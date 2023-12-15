@@ -1,6 +1,6 @@
 name: flutter_easy_validator
 description: "package designed to simplify the process of validating strings in your applications."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/FadyFayezYounan/flutter_easy_validator.git
 
 topics:
