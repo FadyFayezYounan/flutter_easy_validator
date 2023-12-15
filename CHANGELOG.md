@@ -1,3 +1,7 @@
+## 0.0.5
+
+- update `README.md` with more details.
+
 ## 0.0.4
 
 - update `README.md` with more details.
