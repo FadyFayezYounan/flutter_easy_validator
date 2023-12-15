@@ -140,9 +140,9 @@ TextFormField(
         hintText: 'custom error message',
       ),
       validator: EasyValidator.compose([
-        EasyValidator.required(errorMessage: 'required error message'),
-        EasyValidator.minLength(5, errorMessage: 'min length error message'),
-        EasyValidator.maxLength(10, errorMessage: 'max length error message'),
+        EasyValidator.required('required error message'),
+        EasyValidator.minLength(5,'min length error message'),
+        EasyValidator.maxLength(10,'max length error message'),
       ]).validate,
     )
 ```
