@@ -86,7 +86,7 @@ You can easily create your own custom validators by extending the `EasyValidator
 
 ```dart
 class MyCustomValidator extends EasyValidator {
-  MyCustomValidator() : super(errorMessage: 'custom validator error message');
+  MyCustomValidator() : super('custom validator error message');
 
   @override
   String? validate(String? value) {
